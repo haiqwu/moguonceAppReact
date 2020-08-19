@@ -1,0 +1,10 @@
+.title-text {
+    text-align: center;
+    font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
+}
+
+.card-outer-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}

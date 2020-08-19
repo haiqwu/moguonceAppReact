@@ -1,0 +1,18 @@
+.flex-start-ali {
+    align-self: flex-start;
+}
+.flex-end-ali {
+    align-self: flex-end;
+}
+.disp-inline-tab {
+    display: inline-table !important;
+}
+.width43 {
+    width: 43% !important;
+}
+.btn-grp-ci {
+    
+}
+.vi-btn-width {
+    width: 100%;
+}

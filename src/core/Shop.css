@@ -1,0 +1,34 @@
+.li-shop-by-collection {
+    list-style: none;
+    cursor: pointer;
+    
+}
+.li-shop-by-collection :hover {
+    text-decoration: none;
+    
+}
+.price-range {
+    display: inline-flex;
+}
+.slider-range {
+    width: 150px !important;
+    
+}
+.price-min-max {
+    -moz-user-select: none;
+    margin-top: -5px;
+}
+.inner-link-shop-by-collection {
+    color: black;
+}
+
+.load-more-btn-div {
+    text-align: center;
+}
+.load-more-btn {
+    font-size: 1.1875rem;
+    letter-spacing: 1px;
+    line-height: 1.58;
+    
+}
+

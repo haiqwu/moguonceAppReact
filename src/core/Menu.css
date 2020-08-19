@@ -1,0 +1,48 @@
+.activeLink {
+    border-bottom: 5px gray solid;
+}
+
+a:hover {
+    color: gray !important;
+}
+
+.nav-link-logout {
+    cursor: pointer;
+    color: #ffffff;
+}
+.nav-link {
+    color: #434343;
+    font-weight: 600;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2.5rem !important;
+    padding-left: 3.5rem !important;
+
+}
+
+.svg-cart {
+    width: 34px !important;
+    height: 34px !important;
+}
+
+.cart-badge, .cart-badge:hover {
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 12px;
+    font-style: italic;
+    background: #0063ba;;
+    color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+

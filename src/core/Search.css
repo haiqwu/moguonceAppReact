@@ -1,0 +1,13 @@
+.form-span-grp {
+    width: 45%;
+    margin-left: 65%;
+    margin-top: -25px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .svg-outer {
+        padding-top: 29% !important;
+    }
+}
