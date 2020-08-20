@@ -36,7 +36,7 @@ const CartItem = ({
     return (
         <div className="card ">
             <div className="card-header">{product.name}</div>
-            <div className="d-flex card-body">
+            <div className="d-flex card-body flex-wrap">
                 {/* {shouldRedirect(redirect)} */}
                 <div>
                     <ShowImage item={product} url="product" width={`100px`} height={`100px`} />

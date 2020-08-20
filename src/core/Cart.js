@@ -22,24 +22,26 @@ const Cart = ({ $cartCount }) => {
     
     const showItems = items => {
         return (
-            <div  >
+            <div className=" ">
                 { showError(error) }
                 <h2> Shopping Cart ({`${$cartCount} Items`})  </h2>
                 
                 <hr />
-                { items.map((product, i) => {
-                    return (
-                        <CartItem
-                            key={i}
-                            product={product}
-                            setRun={setRun}
-                            run={run}
-                            setCartError={setError}
-                            
-                            // changeCartSize={changeCartSize}
-                        />
-                    );
-                })}
+                <div className="">
+                    { items.map((product, i) => {
+                        return (
+                            <CartItem
+                                key={i}
+                                product={product}
+                                setRun={setRun}
+                                run={run}
+                                setCartError={setError}
+                                
+                                // changeCartSize={changeCartSize}
+                            />
+                        );
+                    })}
+                </div>
             </div>
         );
     };
@@ -60,7 +62,7 @@ const Cart = ({ $cartCount }) => {
     
     return (
         <Layout title="Mogu-oncedep-away" description="Checkout now!" className="container-fluid">
-            <div className="d-flex">
+            <div className="d-flex flex-wrap">
                 <div className="">
                     {items.length > 0 ? showItems(items) : noItemsMessage()}
                 </div>

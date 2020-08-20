@@ -86,9 +86,10 @@ const Signup = () => {
                     value={password}
                 />
             </div>
-            <button onClick={clickSubmit} className="btn btn-outline-success">
+            <p>Create account limited to close beta</p>
+            {/* <button onClick={clickSubmit} className="btn btn-outline-success">
                 Create Account
-            </button>
+            </button> */}
             <div>
                 <p className="pt-4"> Already have an account? <Link to="/signin"> Log in now </Link> </p>
             </div>

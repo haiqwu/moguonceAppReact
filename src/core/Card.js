@@ -16,7 +16,7 @@ const Card = ({product}) => {
                 {/* <p className="black-9">Category: {product.category && product.category.name}</p> */}
                 {/* <p className="black-8">Added on {moment(product.createdAt).fromNow()}</p> */}
                 
-                {/* <div className="align-center">
+                {/* <div className="">
                     <button className="btn btn-outline-success product-name" >
                         
                     </button>

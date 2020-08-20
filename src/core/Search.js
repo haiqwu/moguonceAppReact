@@ -80,7 +80,7 @@ const Search = () => {
                     <div className="input-group-prepend">
                         <select
                             className="btn mr-2"
-                            style={{width: '149%'}}
+                            style={{width: '149%', border: '1px solid gray'}}
                             onChange={handleChange("category")}
                         >
                             <option value="All">All</option>
