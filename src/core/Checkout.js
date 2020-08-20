@@ -22,14 +22,22 @@ const Checkout = ({ products, setRun = f => f, run = undefined, setCartError, ca
         }, 0);
     };
 
+    const cartNotEmpty = () => {
+        return getCart().length > 0;
+    };
+
     const showCheckout = () => {
         return isAuthenticated() ? (
             <div> { showOrderSummary() } </div>
         ) : (
-            <Link to="/signin">
-                {/* In this case will direct user to log in */}
-                <button className="btn btn-primary"> Proceed to checkout </button>
-            </Link>
+            <>
+            { cartNotEmpty() && (
+                <Link to="/signin">
+                    {/* In this case will direct user to log in */}
+                    <button className="btn btn-primary"> Proceed to checkout </button>
+                </Link>
+            )}
+            </>
         );
     };
  
