@@ -10,10 +10,11 @@ const Signup = () => {
         firstName: '',
         email: '',
         password: '',
+        closedBetaAC: '',
         error: '',
         success: false
     });
-    const { lastName, firstName, email, password, error, success } = values;
+    const { closedBetaAC, lastName, firstName, email, password, error, success } = values;
 
     const handleChange = name => event => {
         setValues({
@@ -25,24 +26,32 @@ const Signup = () => {
 
     const clickSubmit = (event) => {
         event.preventDefault();
-        setValues({ ...values, error: false });
-        signup({ last_name: lastName, first_name: firstName, email, password})
-            .then( data => {
-                if (data.error) {
-                    setValues({ ...values, error: data.error, success: false })
-                } else {
-                    // clear fields
-                    setValues({
-                        ...values,
-                        lastName: '',
-                        firstName: '',
-                        email: '',
-                        password: '',
-                        error: '',
-                        success: true
-                    })
-                }
+        if (closedBetaAC === 'XCC123') {
+            setValues({ ...values, error: false });
+            signup({ last_name: lastName, first_name: firstName, email, password})
+                .then( data => {
+                    if (data.error) {
+                        setValues({ ...values, error: data.error, success: false })
+                    } else {
+                        // clear fields
+                        setValues({
+                            ...values,
+                            lastName: '',
+                            firstName: '',
+                            email: '',
+                            closedBetaAC: '',
+                            password: '',
+                            error: '',
+                            success: true
+                        })
+                    }
+                });
+        } else {
+            setValues({
+                ...values,
+                error: 'Activation Code Incorrect',
             });
+        }
     };
     
     const signUpForm = () => (
@@ -86,10 +95,21 @@ const Signup = () => {
                     value={password}
                 />
             </div>
-            <p>Create account limited to close beta</p>
-            {/* <button onClick={clickSubmit} className="btn btn-outline-success">
+            <p>Create account limited to closed beta</p>
+
+            <div className="form-group">
+                <label className="text-muted"> Beta Register Activation Code </label>
+                <input 
+                    onChange={handleChange('closedBetaAC')} 
+                    type="text" 
+                    className="form-control"
+                    value={ closedBetaAC }
+                />
+            </div>
+
+            <button onClick={clickSubmit} className="btn btn-outline-success">
                 Create Account
-            </button> */}
+            </button>
             <div>
                 <p className="pt-4"> Already have an account? <Link to="/signin"> Log in now </Link> </p>
             </div>
