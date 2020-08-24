@@ -100,6 +100,12 @@ const AddProduct = () => {
                     alert('create success');
                     window.location.reload();
                 }
+            }).catch((err) => {
+                console.log(err);
+                setValues({
+                    ...values,
+                    error: err,
+                });
             });
     };
 
