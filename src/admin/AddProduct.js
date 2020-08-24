@@ -77,36 +77,38 @@ const AddProduct = () => {
             error: '',
             loading: true,
         });
-
-        createProduct(user._id, token, formData)
-            .then((data) => {
-                console.log('data: ', data);
-                if (data.error) {
-                    setValues({
-                        ...values,
-                        error: data.error,
-                    });
-                } else {
-                    setValues({
-                        ...values,
-                        name: '',
-                        description: '',
-                        photo: '',
-                        price: '',
-                        quantity: '',
-                        loading: false,
-                        createdProduct: data.name,
-                    });
-                    alert('create success');
-                    window.location.reload();
-                }
-            }).catch((err) => {
-                console.log(err);
-                setValues({
-                    ...values,
-                    error: err,
+        try {
+            createProduct(user._id, token, formData)
+                .then((data) => {
+                    console.log('data: ', data);
+                    if (data.error) {
+                        setValues({
+                            ...values,
+                            error: data.error,
+                        });
+                    } else {
+                        setValues({
+                            ...values,
+                            name: '',
+                            description: '',
+                            photo: '',
+                            price: '',
+                            quantity: '',
+                            loading: false,
+                            createdProduct: data.name,
+                        });
+                        alert('create success');
+                        window.location.reload();
+                    }
                 });
+        } catch (err) {
+            console.log('err catched', err);
+            setValues({
+                ...values,
+                error: err,
             });
+
+        }
     };
 
     const newPostForm = () => (
