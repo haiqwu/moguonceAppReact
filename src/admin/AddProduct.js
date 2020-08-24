@@ -80,6 +80,7 @@ const AddProduct = () => {
 
         createProduct(user._id, token, formData)
             .then((data) => {
+                console.log('data: ', data);
                 if (data.error) {
                     setValues({
                         ...values,
