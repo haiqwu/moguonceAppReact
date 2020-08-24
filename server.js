@@ -12,6 +12,10 @@ app.get('*', function(req, res) {
 
 const PORT = 3000;
 
-app.listen(PORT, () => {
-    console.log(`App is running on port ${PORT}`);
-});
+app.listen(PORT)
+    .on('listening', () => {
+        console.log(`App is running on port ${PORT}`);
+    })
+    .on('error', err => {
+        console.log('! -- FATAL -- NEEDS ACTION ! :', err);
+    });
